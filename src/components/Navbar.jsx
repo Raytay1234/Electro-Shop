@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext.jsx';
-import '../Styles/Navbar.css'; // ✅ Ensure this path is correct
+import '../styles/Navbar.css'; // ✅ Ensure this path is correct
 
 export default function Navbar() {
   const { cartItems } = useCart();

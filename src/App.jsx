@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home.jsx';
-import Products from './Pages/ProductPage.jsx';
-import About from './Pages/About.jsx';
-import Contact from './Pages/Contact-Us.jsx';
+import Products from './pages/ProductPage.jsx';
+import About from './pages/About.jsx';
+import Contact from './pages/Contact-Us.jsx';
 import Cart from './components/Cart.jsx';
 import Checkout from './components/Checkout.jsx';
 import ProductGrid from './components/Product-Grid.jsx';
