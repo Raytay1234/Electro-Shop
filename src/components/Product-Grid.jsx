@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import '../styles/ProductGrid.css';
+import '../styles/ProductCard.css'; // Assuming you have styles for the grid
 
 const ProductGrid = ({ products }) => (
   <div className="product-grid">

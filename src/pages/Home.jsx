@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="home-info-container">
       <header className="home-header">
-        <h1>Welcome to ElectroStore</h1>
+        <h1>Welcome to <span>ElectroStore</span></h1>
         <p>Your trusted source for high-quality electronics and gadgets</p>
       </header>
 
@@ -19,11 +19,11 @@ function Home() {
 
       <section className="services-section">
         <h2>What We Offer</h2>
-        <ul>
-          <li>Wide range of electronics and accessories</li>
-          <li>Trusted brands and latest models</li>
-          <li>Fast and secure shipping</li>
-          <li>Excellent customer support</li>
+        <ul className="services-list">
+          <li>📱 Wide range of electronics and accessories</li>
+          <li>💡 Trusted brands and latest models</li>
+          <li>🚚 Fast and secure shipping</li>
+          <li>🤝 Excellent customer support</li>
         </ul>
       </section>
 

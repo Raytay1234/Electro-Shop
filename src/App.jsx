@@ -7,6 +7,7 @@ import Contact from './pages/Contact-Us.jsx';
 import Cart from './components/Cart.jsx';
 import Checkout from './components/Checkout.jsx';
 import ProductGrid from './components/Product-Grid.jsx';
+import './styles/App.css'
 
 function App() {
   return (

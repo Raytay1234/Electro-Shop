@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/ProductCard.css';
 import { useCart } from '../context/useCart.jsx';
 
 const ProductCard = ({ product }) => {
