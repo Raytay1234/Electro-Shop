@@ -1,25 +1,29 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import useAuth from '../context/useAuth.jsx'; // ✅ import auth context
+import { Link, useNavigate, useLocation } from 'react-router-dom'; // 👈 include useLocation
+import useAuth from '../context/useAuth.jsx';
 import '../styles/Auth.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { login } = useAuth();         // ✅ get login function from context
-  const navigate = useNavigate();      // ✅ redirect after login
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation(); // 👈 capture previous location
+
+  // fallback to profile if no previous page
+  const from = location.state?.from || '/UserProfile';
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Simulated login logic
+    // Fake auth logic
     const userData = {
       email,
-      name: email.split('@')[0], // Just a placeholder name
+      name: email.split('@')[0],
     };
 
-    login(userData);             // ✅ update auth context
-    navigate('/UserProfile');       // ✅ redirect after login
+    login(userData);
+    navigate(from, { replace: true }); // 👈 redirect to where they came from
   };
 
   return (
@@ -43,7 +47,9 @@ const Login = () => {
         />
 
         <button type="submit">Login</button>
-        <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+        <p>
+          Don't have an account? <Link to="/signup">Sign up</Link>
+        </p>
       </form>
     </div>
   );

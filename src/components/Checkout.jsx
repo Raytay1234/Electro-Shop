@@ -1,14 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCart } from '../context/useCart.jsx';
+import useAuth from '../context/useAuth.jsx'; // Make sure this exists
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
   const { cartItems, total, clearCart } = useCart();
+  const { user } = useAuth(); // Assumes you have a user object when logged in
   const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      // Redirect to login and pass the current location
+      navigate('/login', { state: { from: '/checkout' } });
+    }
+  }, [user, navigate]);
 
   const handleCheckout = () => {
     clearCart();
     setSubmitted(true);
   };
+
+  if (!user) return null; // Prevent rendering before redirect
 
   return (
     <div style={{ padding: '2rem', color: '#fff' }}>
