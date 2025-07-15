@@ -1,75 +1,63 @@
 /* src/styles/UserProfile.css */
 
-.profile-container {
+.user-profile {
+  max-width: 500px;
+  margin: 4rem auto;
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #0f172a;
+  background: #1e1e2f;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.profile-card {
-  background-color: #f8fafc;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
+.user-profile h2 {
   text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #00d1b2;
 }
 
-.avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
+.user-profile p {
   margin-bottom: 1rem;
+  font-size: 1.1rem;
 }
 
-.profile-form label,
-.profile-details p {
-  display: block;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.profile-form input {
+.user-profile input {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.25rem;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  background-color: #2c2c3e;
+  color: #fff;
 }
 
-.profile-buttons {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.save-btn,
-.cancel-btn,
-.edit-btn {
-  padding: 0.5rem 1rem;
+.user-profile button {
+  padding: 0.6rem 1.2rem;
+  margin: 0.3rem;
+  font-size: 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-.save-btn {
-  background-color: #0f766e;
-  color: white;
+.user-profile button:first-of-type {
+  background-color: #00d1b2;
+  color: #fff;
 }
 
-.cancel-btn {
-  background-color: #e11d48;
-  color: white;
+.user-profile button:first-of-type:hover {
+  background-color: #00b49f;
 }
 
-.edit-btn {
-  background-color: #2563eb;
-  color: white;
-  margin-top: 1rem;
+.user-profile button:last-of-type {
+  background-color: #ff3860;
+  color: #fff;
+}
+
+.user-profile button:last-of-type:hover {
+  background-color: #e03256;
 }

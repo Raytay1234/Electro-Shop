@@ -16,16 +16,24 @@ const UserProfile = () => {
   };
 
   if (!user) {
-    return <p>Please log in to view your profile.</p>;
+    return <p className="user-profile">Please log in to view your profile.</p>;
   }
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <div className="user-profile">
       <h2>User Profile</h2>
       {isEditing ? (
         <>
-          <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" />
-          <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Name"
+          />
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+          />
           <button onClick={handleSave}>Save</button>
           <button onClick={() => setIsEditing(false)}>Cancel</button>
         </>
