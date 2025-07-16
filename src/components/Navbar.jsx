@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../context/useAuth.jsx';
+import '../styles/Navbar.css'; // Ensure this path is correct
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -12,49 +13,35 @@ const Navbar = () => {
     navigate('/login');
   };
 
-  return (
-    <nav style={styles.nav}>
-      <Link to="/" style={styles.link}>Home</Link>
-      <Link to="/products" style={styles.link}>Products</Link>
-      <Link to="/about" style={styles.link}>About</Link>
-      <Link to="/contact" style={styles.link}>Contact</Link>
-      <Link to="/cart" style={styles.link}>Cart</Link>
-      <Link to="/checkout" style={styles.link}>Checkout</Link>
+ return (
+  <nav className="navbar">
+    <Link to="/" className="nav-link">Home</Link>
+    <Link to="/products" className="nav-link">Products</Link>
+    <Link to="/about" className="nav-link">About</Link>
+    <Link to="/contact" className="nav-link">Contact</Link>
+    <Link to="/cart" className="nav-link">Cart</Link>
+    <Link to="/checkout" className="nav-link">Checkout</Link>
 
-      {user ? (
-        <>
-          <Link to="/UserProfile" style={styles.link}>Profile</Link>
-          <button onClick={handleLogout} style={styles.button}>Logout</button>
-        </>
-      ) : (
-        <>
-          <Link to="/login" style={styles.link}>Login</Link>
-          <Link to="/signup" style={styles.link}>SignUp</Link>
-        </>
-      )}
-    </nav>
-  );
-};
+    {user ? (
+      <>
+        <Link to="/UserProfile" className="nav-link profile-link">
+          <img
+            src={user.profilePicture || '/default-avatar.png'}
+            alt="Profile"
+            className="profile-avatar"
+          />
+        </Link>
+        <button onClick={handleLogout} className="nav-button">Logout</button>
+      </>
+    ) : (
+      <>
+        <Link to="/login" className="nav-link">Login</Link>
+        <Link to="/signup" className="nav-link">SignUp</Link>
+      </>
+    )}
+  </nav>
+);
 
-const styles = {
-  nav: {
-    display: 'flex',
-    gap: '1rem',
-    padding: '1rem',
-    backgroundColor: '#0f172a',
-  },
-  link: {
-    color: 'white',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-  },
-  button: {
-    background: 'transparent',
-    border: 'none',
-    color: 'white',
-    fontWeight: 'bold',
-    cursor: 'pointer',
-  },
 };
 
 export default Navbar;

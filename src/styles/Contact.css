@@ -22,7 +22,7 @@
 }
 
 .contact-form-wrapper {
-  background: #0b2c2f;
+  background: linear-gradient(to right, #2f2461, #0f869398);
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -59,7 +59,7 @@
   margin-top: 1.5rem;
   padding: 0.75rem;
   font-size: 1rem;
-  background: #737475;
+  background: #040404;
   color: white;
   border: none;
   border-radius: 8px;
