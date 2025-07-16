@@ -4,7 +4,7 @@
   max-width: 500px;
   margin: 4rem auto;
   padding: 2rem;
-  background: #1e1e2f;
+   background: linear-gradient(to right, #5f4949, #0f656c98);
   color: #fff;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
@@ -15,7 +15,7 @@
   text-align: center;
   margin-bottom: 2rem;
   font-size: 1.8rem;
-  color: #00d1b2;
+  color: #146a92;
 }
 
 .user-profile p {
@@ -59,7 +59,7 @@
 }
 
 .user-profile button:last-of-type:hover {
-  background-color: #e03256;
+  background-color: #000000;
 }
 .profile-image-container {
   display: flex;
