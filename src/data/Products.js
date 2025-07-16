@@ -31,6 +31,22 @@ const products = [
     description: 'High-performance motherboard with advanced connectivity options.',
     category: 'Components',
   },
+  {
+    id: 5,
+    name: 'Wirrelesss speakers',
+    price: 199.99,
+    image: '/pics/Speaker.jpg', // Update with your image path
+    description: 'High-performance speakers with advanced connectivity options.',
+    category: 'Components',
+  },
+  {
+    id: 6,
+    name: 'PC Case',
+    price: 199.99,
+    image: '/pics/PC case.jpg', // Update with your image path
+    description: 'High-performance motherboard with advanced connectivity options.',
+    category: 'Components',
+  },
 ];
 
 export default products;
