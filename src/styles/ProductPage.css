@@ -1,12 +1,10 @@
-/* General layout for the entire products page */
 .products-page {
   padding: 2rem;
-  background-color: #000000;
+  background: linear-gradient(to right, #693d3d, #09b03b98);
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Heading style */
 .products-page h2 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -26,7 +24,6 @@
   border-radius: 2px;
 }
 
-/* Optional spacing or grid padding for product list container */
 .products-page .product-list {
   display: flex;
   flex-wrap: wrap;

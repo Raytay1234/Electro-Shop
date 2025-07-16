@@ -1,17 +1,17 @@
-/* Container for product cards */
+/* Grid Container */
 .product-list,
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   padding: 2rem;
-  background: #000000;
+  background: linear-gradient(to right, #693d3d, #09b03b98);
 }
 
-/* Individual Product Card */
+/* Product Card */
 .product-card {
-  background-color: #000000;
-  border: 1px solid #000000;
+  background-color: #000;
+  border: 1px solid #000;
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
@@ -28,14 +28,14 @@
 }
 
 .product-card img {
-  max-width: 100%;
+  width: 100%;
   max-height: 550px;
   object-fit: cover;
   border-radius: 1px;
   margin-bottom: 1rem;
 }
 
-/* Product Title */
+/* Title */
 .product-card h2 {
   font-size: 1.25rem;
   color: #00bcd4;
@@ -43,7 +43,7 @@
   font-weight: 600;
 }
 
-/* Product Description */
+/* Description */
 .product-card p {
   font-size: 0.95rem;
   color: #e0e0e0;
@@ -51,7 +51,7 @@
   line-height: 1.5;
 }
 
-/* Price Styling */
+/* Price */
 .product-card .price {
   font-size: 1.1rem;
   font-weight: 700;
@@ -59,7 +59,7 @@
   margin-bottom: 1rem;
 }
 
-/* Add to Cart Button */
+/* Button */
 .product-card button {
   background-color: #00bcd4;
   color: #1a1a1a;
@@ -73,10 +73,10 @@
 }
 
 .product-card button:hover {
-  background-color: #000000;
+  background-color: #000;
 }
 
-/* Responsive Tweaks */
+/* Responsive */
 @media (max-width: 768px) {
   .product-card {
     padding: 1rem;

@@ -1,16 +1,23 @@
-/* Product Card */
+/* Product Grid Container */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Individual Product Card */
 .product-card {
-  background-color: #000000;
-  border: 1px solid #000000;
+  background: linear-gradient(to right, #2e1890, #14484d98);
+  border: 1px solid #000;
   border-radius: 12px;
   padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .product-card:hover {
@@ -19,26 +26,22 @@
 }
 
 .product-card img {
+  max-width: 100%;
+  max-height: 550px;
+  object-fit: cover;
   border-radius: 1px;
   margin-bottom: 1rem;
-  object-fit: cover;
-  max-height: 550px;
-  max-width: 460px;
 }
 
+/* Title */
 .product-card h2 {
   font-size: 1.25rem;
   color: #00bcd4;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-}
 
+/* Description */
 .product-card p {
   font-size: 0.95rem;
   color: #e0e0e0;
@@ -46,6 +49,7 @@
   line-height: 1.5;
 }
 
+/* Price */
 .product-card .price {
   font-size: 1.1rem;
   font-weight: 700;
@@ -53,6 +57,7 @@
   margin-bottom: 1rem;
 }
 
+/* Button */
 .product-card button {
   background-color: #00bcd4;
   color: #1a1a1a;
@@ -66,10 +71,10 @@
 }
 
 .product-card button:hover {
-  background-color: #000000;
+  background-color: #000;
 }
 
-/* Responsive tweaks */
+/* Responsive Tweaks */
 @media (max-width: 768px) {
   .product-card {
     padding: 1rem;
