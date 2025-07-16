@@ -8,7 +8,7 @@
 
 /* Individual Product Card */
 .product-card {
-  background: linear-gradient(to right, #2e1890, #14484d98);
+  background: linear-gradient(to right, #000000, #14484d98);
   border: 1px solid #000;
   border-radius: 12px;
   padding: 1.5rem;

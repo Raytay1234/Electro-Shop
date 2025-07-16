@@ -5,7 +5,7 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   padding: 2rem;
-  background: linear-gradient(to right, #693d3d, #09b03b98);
+  background: linear-gradient(to right, #000000, #26416b98);
 }
 
 /* Product Card */
