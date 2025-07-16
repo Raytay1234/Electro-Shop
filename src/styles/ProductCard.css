@@ -3,13 +3,13 @@
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 20px;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background: #000000;
 }
 
 .product-card {
-  background-color: #ffffff;
+  background-color: #000000;
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
@@ -45,13 +45,13 @@
 .product-card .price {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #009578;
+  color: #162925;
   margin-bottom: 1rem;
 }
 
 .product-card button {
   padding: 0.75rem 1.5rem;
-  background-color: #007bff;
+  background-color: #2d3465;
   color: white;
   border: none;
   border-radius: 8px;
@@ -61,5 +61,5 @@
 }
 
 .product-card button:hover {
-  background-color: #0056b3;
+  background-color: #372d2d;
 }

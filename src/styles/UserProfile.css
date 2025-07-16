@@ -30,7 +30,7 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
-  background-color: #2c2c3e;
+  background-color: #000000;
   color: #fff;
 }
 
@@ -60,4 +60,16 @@
 
 .user-profile button:last-of-type:hover {
   background-color: #e03256;
+}
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.profile-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #1a73e8;
 }

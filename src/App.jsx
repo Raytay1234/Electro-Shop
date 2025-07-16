@@ -15,7 +15,7 @@ import ProtectedRoute from './components/ProtectedRoute.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { CartProvider } from './context/CartContext.jsx';
 import UserProfile from './pages/UserProfile.jsx';
-import './styles/App.css';
+import './styles/App.css'
 
 function App() {
   return (
