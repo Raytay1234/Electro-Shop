@@ -1,94 +1,64 @@
-/* Grid Container */
-.product-list,
-.product-grid {
+.product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
   padding: 2rem;
-  background: linear-gradient(to right, #000000, #26416b98);
 }
 
-/* Product Card */
 .product-card {
-  background-color: #000;
-  border: 1px solid #000;
+  width: 250px;
+  background: #fff;
   border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
 }
+
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 188, 212, 0.25);
+  transform: scale(1.02);
 }
 
 .product-card img {
   width: 100%;
-  max-height: 550px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 1px;
-  margin-bottom: 1rem;
+  display: block;
 }
 
-/* Title */
 .product-card h2 {
-  font-size: 1.25rem;
-  color: #00bcd4;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-/* Description */
-.product-card p {
-  font-size: 0.95rem;
-  color: #e0e0e0;
-  margin-bottom: 0.75rem;
-  line-height: 1.5;
-}
-
-/* Price */
-.product-card .price {
   font-size: 1.1rem;
-  font-weight: 700;
-  color: #00e5ff;
-  margin-bottom: 1rem;
+  margin: 0.8rem;
 }
 
-/* Button */
+.product-card p {
+  flex: 1;
+  font-size: 0.9rem;
+  margin: 0 0.8rem 0.8rem;
+  color: #555;
+}
+
+.product-card .price {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0 0.8rem 1rem;
+}
+
 .product-card button {
-  background-color: #00bcd4;
-  color: #1a1a1a;
+  background-color: #4CAF50;
+  color: white;
   border: none;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 1rem;
+  margin: 0 0.8rem 1rem;
   border-radius: 6px;
-  font-size: 0.95rem;
-  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  align-self: flex-start;
+  transition: background-color 0.3s;
 }
 
 .product-card button:hover {
-  background-color: #000;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .product-card {
-    padding: 1rem;
-  }
-
-  .product-card h2 {
-    font-size: 1.1rem;
-  }
-
-  .product-card p,
-  .product-card .price,
-  .product-card button {
-    font-size: 0.9rem;
-  }
+  background-color: #3e8e41;
 }
