@@ -4,7 +4,7 @@
   max-width: 500px;
   margin: 4rem auto;
   padding: 2rem;
-   background: linear-gradient(to right, #5f4949, #0f656c98);
+  background: linear-gradient(to right, #5f4949, #0f656c98);
   color: #fff;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
@@ -30,7 +30,7 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
-  background-color: #000000;
+  background-color: #000;
   color: #fff;
 }
 
@@ -59,17 +59,42 @@
 }
 
 .user-profile button:last-of-type:hover {
-  background-color: #000000;
+  background-color: #000;
 }
+
 .profile-image-container {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 }
+
 .profile-image {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #1a73e8;
+  border: 3px solid #1a73e8;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .user-profile {
+    background: linear-gradient(to right, #1f1f1f, #0f4a4e);
+    color: #ffffff;
+  }
+
+  .user-profile input {
+    background-color: #1e1e1e;
+    color: #fff;
+    border: 1px solid #444;
+  }
+
+  .user-profile button:last-of-type:hover {
+    background-color: #222;
+  }
+
+  .profile-image {
+    border: 3px solid #4aa5ff;
+  }
 }
