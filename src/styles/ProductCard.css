@@ -1,9 +1,11 @@
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr); /* Force exactly 3 columns */
+  gap: 1.3rem;
   padding: 2rem;
+  justify-items: center; /* center cards horizontally */
 }
+
 
 .product-card {
   width: 250px;

@@ -29,7 +29,7 @@ const AboutUs = () => {
       {/* Hero Section */}
       <section className="hero">
         <img
-          src="/pics/Banner.jpg"
+          src="/pics/Banner2.jpg"
           alt="Company Banner"
           className="hero-image"
         />

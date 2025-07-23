@@ -1,83 +1,89 @@
-/* Home.css */
-
 .home-info-container {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: #fff;
-  min-height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   padding: 2rem;
-  display: fit-content;
-  flex-direction: column;
-  gap: 2rem;
+  background: linear-gradient(to right, #e0f7fa, #fff);
+  color: #333;
 }
 
 .home-header {
   text-align: center;
-  padding: 2rem 0;
+  margin-bottom: 3rem;
 }
 
-.home-header h1 {
-  font-size: 3rem;
-  color: #00d1ff;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+.home-header .highlight {
+  color: #0d47a1;
 }
 
-.home-header h1 span {
-  color: #00ffa6;
+.hero-image img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
-.home-header p {
+
+.subheading {
   font-size: 1.2rem;
-  color: #e0e0e0;
   margin-top: 0.5rem;
+  color: #555;
 }
 
 .mission-section,
-.services-section {
-  background-color: rgba(102, 96, 96, 0.05);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.mission-section h2,
-.services-section h2 {
-  color: #00ffa6;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.mission-section p {
-  font-size: 1.1rem;
-  color: #dcdcdc;
+.services-section,
+.why-us-section,
+.cta-section {
+  margin-bottom: 3rem;
 }
 
 .services-list {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  line-height: 2;
-  font-size: 1.1rem;
+  padding-left: 0;
 }
 
 .services-list li {
-  background: rgba(255, 255, 255, 0.1);
-  margin-bottom: 0.8rem;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-  color: #e0e0e0;
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
-.services-list li:hover {
-  background: rgba(255, 255, 255, 0.2);
+.why-us-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.why-us-item {
+  flex: 1 1 30%;
+  background: #f1f8ff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.cta-section {
+  text-align: center;
+  background: #0d47a1;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.cta-button {
+  margin-top: 1rem;
+  display: inline-block;
+  background: #ffca28;
+  color: #0d47a1;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .home-footer {
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid #ccc;
   font-size: 0.9rem;
-  color: #aaa;
-  border-top: 1px solid #333;
-  margin-top: auto;
 }
