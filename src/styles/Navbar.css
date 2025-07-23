@@ -4,14 +4,15 @@
   display: flex;
   gap: 1rem;
   align-items: center;
-  position:sticky;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
+/* Navigation Links */
 .nav-link {
   color: white;
   text-decoration: none;
@@ -24,6 +25,7 @@
   text-decoration: underline;
 }
 
+/* Buttons in Nav (e.g., Logout or Login) */
 .nav-button {
   background-color: #fff;
   color: #1a73e8;
@@ -38,6 +40,8 @@
 .nav-button:hover {
   background-color: #e0ecff;
 }
+
+/* Profile Image (Avatar) */
 .profile-avatar {
   width: 32px;
   height: 32px;
@@ -49,28 +53,4 @@
 
 .profile-avatar:hover {
   transform: scale(1.1);
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: #111;
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-button {
-  background-color: transparent;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.nav-button:hover {
-  text-decoration: underline;
 }

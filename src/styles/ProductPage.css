@@ -1,10 +1,46 @@
-/* Root Products Page */
+/* ===============================
+   Root Theme Variables
+================================= */
+:root {
+  /* Light Mode Variables */
+  --bg-gradient: linear-gradient(135deg, #fdfbfb, #ebedee); /* Light gradient */
+  --text-color: #000000;
+  --heading-color: #1a1a1a;
+  --input-bg: rgba(0, 0, 0, 0.06);
+  --input-focus-bg: rgba(0, 0, 0, 0.1);
+  --input-placeholder: #555;
+  --filter-bg: rgba(255, 255, 255, 0.6);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --price-label: #333;
+  --reset-btn-bg: #ff4d4f;
+  --reset-btn-hover: #e04344;
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Variables */
+  --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Dark gradient */
+  --text-color: #ffffff;
+  --heading-color: #f0f0f0;
+  --input-bg: rgba(255, 255, 255, 0.1);
+  --input-focus-bg: rgba(255, 255, 255, 0.15);
+  --input-placeholder: #000000;
+  --filter-bg: rgba(255, 255, 255, 0.06);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --price-label: #e0e0e0;
+  --reset-btn-bg: #ff4d4f;
+  --reset-btn-hover: #e04344;
+}
+
+/* ===============================
+   Products Page Styling
+================================= */
 .products-page {
   padding: 2rem;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Dark blue gradient */
+  background: var(--bg-gradient);
   font-family: 'Segoe UI', sans-serif;
-  color: #ffffff;
+  color: var(--text-color);
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 /* Title */
@@ -13,7 +49,7 @@
   margin-bottom: 2rem;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #f0f0f0;
+  color: var(--heading-color);
 }
 
 /* Filter Bar Styling */
@@ -26,12 +62,12 @@
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
 
-  background: rgba(255, 255, 255, 0.06);
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
-  backdrop-filter: blur(10px);         /* Standard */
+  background: var(--filter-bg);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--border-color);
   transition: all 0.3s ease-in-out;
 }
 
@@ -42,25 +78,25 @@
   padding: 0.6rem 1rem;
   border: none;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background-color: var(--input-bg);
+  color: var(--text-color);
   font-size: 1rem;
   min-width: 180px;
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
-  backdrop-filter: blur(10px);         /* Standard */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.08);
   transition: background 0.3s ease;
 }
 
 .filters input[type="text"]::placeholder {
-  color: #ccc;
+  color: var(--input-placeholder);
 }
 
 .filters input[type="text"]:focus,
 .filters select:focus,
 .filters input[type="range"]:focus {
   outline: none;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--input-focus-bg);
   box-shadow: 0 0 0 2px #5eb4ff;
 }
 
@@ -76,13 +112,13 @@
   font-weight: 500;
   font-size: 0.9rem;
   margin-bottom: 0.3rem;
-  color: #e0e0e0;
+  color: var(--price-label);
 }
 
 /* Reset Filters Button */
 .reset-button {
   padding: 0.6rem 1.2rem;
-  background: #ff4d4f;
+  background: var(--reset-btn-bg);
   color: white;
   border: none;
   border-radius: 10px;
@@ -92,10 +128,10 @@
 }
 
 .reset-button:hover {
-  background: #e04344;
+  background: var(--reset-btn-hover);
 }
 
-/* Optional: Sticky Filter Bar */
+/* Sticky Filter Bar */
 .filters.sticky {
   position: sticky;
   top: 1rem;
