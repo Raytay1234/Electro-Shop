@@ -28,12 +28,7 @@ const AboutUs = () => {
 
       {/* Hero Section */}
       <section className="hero">
-        <img
-          src="/pics/Banner2.jpg"
-          alt="Company Banner"
-          className="hero-image"
-        />
-         <div className="hero-text">
+        <div className="hero-text">
           <h1>About Us</h1>
           <p>Your trusted partner in quality and innovation. We combine creativity, technology, and strategy to deliver impactful solutions.</p>
         </div>
@@ -76,7 +71,7 @@ const AboutUs = () => {
       <section className="history">
         <h2>Our Story</h2>
         <p>
-          Founded in 2018, we started as a small team of passionate developers and designers who believed in making a difference through technology. 
+          Founded in 2018, we started as a small team of passionate developers and designers who believed in making a difference through technology.
           Our first office was a humble co-working space, but our ambition was anything but small.
         </p>
         <p>

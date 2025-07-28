@@ -1,23 +1,42 @@
 /* Product Grid Container */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  grid-template-columns: repeat(2, 1fr); /* Force 2 columns always */
+  gap: 1.5rem;
+  padding: 0 1rem 2rem;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Stack to 1 column for very small devices */
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    padding: 0 0.5rem 2rem;
+  }
+
+  .container {
+    padding-inline: 0 !important;
+  }
 }
 
 /* Individual Product Card */
 .product-card {
-  background: linear-gradient(to right, #000000, #14484d98);
-  border: 1px solid #000;
-  border-radius: 12px;
-  padding: 1.5rem;
+  background: var(--bg-gradient);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: var(--space-2);
   text-align: center;
   display: grid;
   grid-template-rows: auto 1fr auto;
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .product-card:hover {
@@ -29,14 +48,14 @@
   max-width: 100%;
   max-height: 550px;
   object-fit: cover;
-  border-radius: 1px;
-  margin-bottom: 1rem;
+  border-radius: 8px;
+  margin-bottom: var(--space-2);
 }
 
 /* Title */
 .product-card h2 {
   font-size: 1.25rem;
-  color: #00bcd4;
+  color: var(--heading-color);
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
@@ -44,7 +63,7 @@
 /* Description */
 .product-card p {
   font-size: 0.95rem;
-  color: #e0e0e0;
+  color: var(--text-color);
   margin-bottom: 0.75rem;
   line-height: 1.5;
 }
@@ -53,8 +72,8 @@
 .product-card .price {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #00e5ff;
-  margin-bottom: 1rem;
+  color: var(--price-label);
+  margin-bottom: var(--space-1);
 }
 
 /* Button */
@@ -67,17 +86,18 @@
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .product-card button:hover {
-  background-color: #000;
+  background-color: #0097a7;
+  color: #fff;
 }
 
 /* Responsive Tweaks */
 @media (max-width: 768px) {
   .product-card {
-    padding: 1rem;
+    padding: var(--space-1);
   }
 
   .product-card h2 {

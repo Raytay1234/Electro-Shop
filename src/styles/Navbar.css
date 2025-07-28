@@ -54,3 +54,25 @@
 .profile-avatar:hover {
   transform: scale(1.1);
 }
+.cart-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-link {
+  position: relative;
+}
+
+/* ✅ Persistent item count badge */
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: #f44336;
+  color: white;
+  font-size: 0.75rem;
+  padding: 3px 7px;
+  border-radius: 50%;
+  font-weight: bold;
+  z-index: 10;
+}
