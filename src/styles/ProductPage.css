@@ -1,189 +1,73 @@
 /* ===============================
-   Global resets & helpers
-================================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  font-size: clamp(15px, 1.2vw + 0.5rem, 18px);
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-#root {
-  width: 100%;
-  height: 100%;
-}
-
-/* ===============================
-   Fluid spacing scale
-================================= */
-:root {
-  --space-1: clamp(0.5rem, 0.6vw, 0.75rem);
-  --space-2: clamp(1rem, 1.2vw, 1.5rem);
-  --space-3: clamp(1.5rem, 2vw, 2.5rem);
-  --radius: 16px;
-  --container-max: 1440px;
-}
-
-/* ===============================
-   Theme Variables
-================================= */
-:root {
-  --bg-gradient: linear-gradient(135deg, #2f2461 30%, #1dbb69 100%);
-  --text-color: #000;
-  --heading-color: #1a1a1a;
-  --input-bg: rgba(0, 0, 0, 0.06);
-  --input-focus-bg: rgba(0, 0, 0, 0.1);
-  --input-placeholder: #555;
-  --filter-bg: rgba(255, 255, 255, 0.6);
-  --border-color: rgba(0, 0, 0, 0.1);
-  --price-label: #333;
-  --reset-btn-bg: #ff4d4f;
-  --reset-btn-hover: #e04344;
-}
-
-[data-theme="dark"] {
-  --bg-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  --text-color: #fff;
-  --heading-color: #f0f0f0;
-  --input-bg: rgba(255, 255, 255, 0.1);
-  --input-focus-bg: rgba(255, 255, 255, 0.15);
-  --input-placeholder: #000;
-  --filter-bg: rgba(255, 255, 255, 0.06);
-  --border-color: rgba(255, 255, 255, 0.15);
-  --price-label: #e0e0e0;
-}
-
-/* ===============================
-   Container
-================================= */
-.container {
-  width: 100%;
-  max-width: var(--container-max);
-  margin-inline: auto;
-  padding-inline: var(--space-2);
-  box-sizing: border-box;
-}
-
-/* ===============================
-   Products Page
+   General Page Layout
 ================================= */
 .products-page {
-  width: 100%;
+  padding: 2rem;
   min-height: 100vh;
-  background: var(--bg-gradient);
   font-family: 'Segoe UI', sans-serif;
-  color: var(--text-color);
-  padding: 2rem 1rem;
-  transition: background 0.5s ease, color 0.5s ease;
-  overflow-x: hidden;
+  background: #f5f6fa;
 }
 
-.products-page h2 {
+.page-title {
   text-align: center;
-  margin-bottom: var(--space-3);
-  font-size: clamp(1.6rem, 3vw, 2.5rem);
-  font-weight: 700;
-  color: var(--heading-color);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #2f3640;
 }
 
 /* ===============================
-   Filters
+   Filters Section
 ================================= */
 .filters {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-  gap: var(--space-2);
-  align-items: end;
-  padding: var(--space-2);
-  margin-bottom: var(--space-3);
-  background: var(--filter-bg);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border-radius: var(--radius);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  border: 1px solid var(--border-color);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
 }
 
-.filters input,
+.filters input[type="text"],
 .filters select {
-  width: 100%;
-  padding: 0.6rem 1rem;
-  border: none;
-  border-radius: 10px;
-  background-color: var(--input-bg);
-  color: var(--text-color);
+  padding: 0.6rem;
   font-size: 1rem;
-  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.08);
+  border: 1px solid #dcdde1;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 200px;
 }
 
-.filters input::placeholder {
-  color: var(--input-placeholder);
+.filters .price-range {
+  flex: 1;
+  min-width: 200px;
 }
 
-.filters input:focus,
-.filters select:focus {
-  outline: none;
-  background-color: var(--input-focus-bg);
-  box-shadow: 0 0 0 2px #5eb4ff;
-}
-
-.price-range label {
-  font-weight: 500;
+.filters .price-range label {
+  display: block;
   font-size: 0.9rem;
-  margin-bottom: 0.3rem;
-  color: var(--price-label);
+  margin-bottom: 0.4rem;
+  color: #555;
+}
+
+.filters input[type="range"] {
+  width: 100%;
 }
 
 .reset-button {
-  padding: 0.6rem 1.2rem;
-  background: var(--reset-btn-bg);
+  background: #e84118;
   color: white;
   border: none;
-  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s ease-in-out;
-  width: 100%;
+  transition: background 0.3s ease;
 }
 
 .reset-button:hover {
-  background: var(--reset-btn-hover);
-}
-
-/* ===============================
-   Product Grid (2x2)
-================================= */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  padding: 0 var(--space-1) var(--space-2);
-  width: 100%;
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
+  background: #c23616;
 }
 
 /* ===============================
@@ -192,79 +76,40 @@ html, body {
 .pagination-controls {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: var(--space-3);
+  gap: 0.4rem;
+  margin-top: 2rem;
 }
 
 .pagination-controls button {
-  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 8px;
-  background-color: var(--input-bg);
-  color: var(--text-color);
-  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  background: #dcdde1;
+  border-radius: 4px;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-.pagination-controls .page-number.active {
-  background-color: #007bff;
+.pagination-controls button:hover:not(:disabled) {
+  background: #00a8ff;
   color: white;
-  font-weight: 700;
-  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
 }
 
 .pagination-controls button:disabled {
-  opacity: 0.5;
+  background: #f0f0f0;
   cursor: not-allowed;
 }
 
+.page-number.active {
+  background: #00a8ff;
+  color: white;
+}
+
 /* ===============================
-   Media Queries
+   Responsive
 ================================= */
-@media (max-width: 480px) {
-  body {
-    font-size: 1rem;
-  }
-
-  .products-page {
-    padding: 1rem 0.5rem;
-  }
-
+@media (max-width: 768px) {
   .filters {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .filters {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding: var(--space-2) var(--space-3);
-  }
-}
-
-@media (min-width: 1024px) {
-  .filters {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-}
-
-@media (min-width: 1440px) {
-  .products-page {
-    padding: var(--space-3) 0;
-  }
-
-  .products-page .container {
-    padding-inline: var(--space-3);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-    animation: none !important;
-    scroll-behavior: auto !important;
+    flex-direction: column;
   }
 }

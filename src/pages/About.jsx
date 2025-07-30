@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/About.css'; // Ensure this file matches the styles provided
+import '../styles/About.css';
 
 const teamData = [
   {
@@ -29,33 +29,39 @@ const AboutUs = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-text">
-          <h1>About Us</h1>
-          <p>Your trusted partner in quality and innovation. We combine creativity, technology, and strategy to deliver impactful solutions.</p>
+          <h1>About <span className="highlight">ElectroStore</span></h1>
+          <p>
+            Your trusted partner in quality electronics and innovative solutions.
+            We combine creativity, technology, and strategy to deliver impactful experiences.
+          </p>
         </div>
       </section>
-      {/* Mission Section */}
-      <section className="mission">
-        <h2>Our Mission</h2>
-        <p>
-          Our mission is to empower businesses and individuals with high-quality products and services that enhance productivity and simplify everyday challenges.
-          We aim to build lasting relationships through transparency, innovation, and world-class support.
-        </p>
+
+      {/* Mission & Vision */}
+      <section className="info-section">
+        <div className="info-block">
+          <h2>Our Mission</h2>
+          <p>
+            To empower individuals and businesses with reliable, cutting-edge technology
+            that enhances productivity, convenience, and lifestyle. We value transparency,
+            innovation, and exceptional customer service.
+          </p>
+        </div>
+        <div className="info-block">
+          <h2>Our Vision</h2>
+          <p>
+            To be a global leader in tech solutions, fostering a world where technology
+            empowers everyone to reach their full potential.
+          </p>
+        </div>
       </section>
 
-      {/* Vision Section */}
-      <section className="vision">
-        <h2>Our Vision</h2>
-        <p>
-          To be a global leader in tech-driven solutions, fostering a world where technology empowers every human to reach their full potential.
-        </p>
-      </section>
-
-      {/* Team Section */}
+      {/* Team */}
       <section className="team">
-        <h2>Meet Our Team</h2>
-        <div className="team-members">
+        <h2>Meet Our Leadership</h2>
+        <div className="team-grid">
           {teamData.map((member, index) => (
-            <div className="team-member" key={index}>
+            <div className="team-card" key={index}>
               <img src={member.image} alt={member.name} />
               <div className="team-info">
                 <h3>{member.name}</h3>
@@ -67,29 +73,33 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* History Section */}
+      {/* Story */}
       <section className="history">
         <h2>Our Story</h2>
         <p>
-          Founded in 2018, we started as a small team of passionate developers and designers who believed in making a difference through technology.
-          Our first office was a humble co-working space, but our ambition was anything but small.
+          Founded in 2018, we started as a small group of passionate tech professionals
+          with a big dream — to make technology more accessible and impactful.
         </p>
         <p>
-          Over the years, we’ve expanded our team, embraced cutting-edge tools, and served clients across various industries including healthcare, retail, education, and fintech.
-          Each milestone we’ve achieved has reinforced our belief in innovation, teamwork, and relentless customer focus.
+          From a modest co-working space to serving clients across industries like healthcare,
+          retail, education, and fintech, our journey has been fueled by innovation and
+          customer trust.
         </p>
         <p>
-          Today, we’re proud to be a diverse and dynamic team dedicated to shaping the future through thoughtful design and powerful technology.
+          Today, we’re proud to be a diverse, dynamic team shaping the future of technology
+          with creativity and purpose.
         </p>
       </section>
 
-      {/* Call to Action Section */}
+      {/* Call to Action */}
       <section className="cta">
         <h2>Join Us on Our Journey</h2>
-        <p>We’re always looking for passionate individuals and partners who want to make a difference. Let’s build something great together.</p>
+        <p>
+          We’re always looking for passionate individuals and partners who want to
+          innovate and make a difference.
+        </p>
         <a href="/contact" className="contact-link">Get in Touch</a>
       </section>
-
     </div>
   );
 };

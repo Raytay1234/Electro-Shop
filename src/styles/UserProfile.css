@@ -1,100 +1,120 @@
-/* src/styles/UserProfile.css */
-
+/* Main Container */
 .user-profile {
   max-width: 500px;
-  margin: 4rem auto;
+  margin: 3rem auto;
+  background: white;
   padding: 2rem;
-  background: linear-gradient(to right, #5f4949, #0f656c98);
-  color: #fff;
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.user-profile h2 {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
   text-align: center;
-  margin-bottom: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-title {
   font-size: 1.8rem;
-  color: #146a92;
+  color: #203a43;
+  margin-bottom: 1.5rem;
 }
 
-.user-profile p {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+/* No User Logged In */
+.no-user {
+  text-align: center;
+  padding: 2rem;
 }
 
-.user-profile input {
-  width: 100%;
-  padding: 0.7rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #000;
-  color: #fff;
-}
-
-.user-profile button {
-  padding: 0.6rem 1.2rem;
-  margin: 0.3rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.user-profile button:first-of-type {
-  background-color: #00d1b2;
-  color: #fff;
-}
-
-.user-profile button:first-of-type:hover {
-  background-color: #00b49f;
-}
-
-.user-profile button:last-of-type {
-  background-color: #ff3860;
-  color: #fff;
-}
-
-.user-profile button:last-of-type:hover {
-  background-color: #000;
-}
-
+/* Profile Image */
 .profile-image-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
+  position: relative;
+  margin-bottom: 1.5rem;
 }
 
 .profile-image {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 3px solid #1a73e8;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  object-fit: cover;
+  border: 3px solid #0f8693;
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .user-profile {
-    background: linear-gradient(to right, #1f1f1f, #0f4a4e);
-    color: #ffffff;
-  }
+.upload-btn {
+  display: inline-block;
+  background: #0f8693;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  transition: background 0.3s ease;
+}
 
-  .user-profile input {
-    background-color: #1e1e1e;
-    color: #fff;
-    border: 1px solid #444;
-  }
+.upload-btn:hover {
+  background: #0c6a72;
+}
 
-  .user-profile button:last-of-type:hover {
-    background-color: #222;
-  }
+/* Profile Inputs */
+.profile-input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.6rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
 
-  .profile-image {
-    border: 3px solid #4aa5ff;
-  }
+/* Buttons */
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.save-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.save-btn:hover {
+  background: #218838;
+}
+
+.cancel-btn {
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #cc0000;
+}
+
+.edit-btn {
+  background: #0f8693;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background: #0c6a72;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

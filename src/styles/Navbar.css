@@ -1,78 +1,190 @@
+/* ===== Base Navbar ===== */
 .navbar {
-  background: linear-gradient(to right, #2f2461, #0f869398);
-  padding: 1rem 2rem;
+  background: linear-gradient(to right, #1a1f36, #0f8693);
+  color: white;
   display: flex;
-  gap: 1rem;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: space-between; /* Keep logo on left, right content on right */
+  padding: 0.8rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Navigation Links */
-.nav-link {
+/* Logo */
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
   color: white;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+.nav-logo:hover {
+  color: #ffb400;
 }
 
-.nav-link:hover {
-  color: #000000;
-  text-decoration: underline;
+/* Desktop Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-left: auto; /* Forces links to right side */
+}
+.nav-links a,
+.nav-links button {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover,
+.nav-links button:hover {
+  color: #ffb400;
 }
 
-/* Buttons in Nav (e.g., Logout or Login) */
-.nav-button {
-  background-color: #fff;
-  color: #1a73e8;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.nav-button:hover {
-  background-color: #e0ecff;
-}
-
-/* Profile Image (Avatar) */
-.profile-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #00bcd4;
-  transition: transform 0.3s ease;
-}
-
-.profile-avatar:hover {
-  transform: scale(1.1);
-}
-.cart-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.cart-link {
-  position: relative;
-}
-
-/* ✅ Persistent item count badge */
+/* Cart Badge */
 .cart-badge {
-  position: absolute;
-  top: -8px;
-  right: -12px;
-  background-color: #f44336;
+  background: #ff4c4c;
   color: white;
   font-size: 0.75rem;
-  padding: 3px 7px;
-  border-radius: 50%;
   font-weight: bold;
-  z-index: 10;
+  padding: 2px 6px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+/* Profile Avatar */
+.profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+}
+.profile-avatar:hover {
+  transform: scale(1.05);
+}
+
+/* Logout Button */
+.logout-btn {
+  background: transparent;
+  border: 1px solid white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.logout-btn:hover {
+  background: white;
+  color: #1a1f36;
+}
+
+/* Hamburger Menu (hidden in desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  position: relative;
+}
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: rgb(9, 7, 7);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Hamburger Badge */
+.hamburger-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ff4c4c;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* Desktop vs Mobile Avatar Placement */
+.desktop-avatar {
+  display: none;
+}
+.mobile-avatar {
+  display: none;
+}
+
+/* ===== Mobile Styles ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: relative;
+    z-index: 1100;
+  }
+
+  /* Mobile dropdown */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background: linear-gradient(to right, #1a1f36, #0f8693);
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    display: none; /* Hidden by default */
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: -2px 4px 12px rgba(0,0,0,0.15);
+    animation: slideDown 0.25s ease-out;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+
+  .mobile-avatar {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* ===== Desktop Styles ===== */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+  }
+  .desktop-avatar {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.5rem;
+  }
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

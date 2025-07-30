@@ -19,13 +19,11 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       alert('Please fill in all fields.');
       return;
     }
 
-    // Normally you’d send data to a server here
     console.log('Form submitted:', formData);
 
     setSubmitted(true);
@@ -36,8 +34,9 @@ const Contact = () => {
     <div className="contact-container">
       <div className="contact-header">
         <h1>Contact Us</h1>
-        <p>We're here to help! Fill out the form and we'll get back to you shortly.</p>
+        <p>We’re here to help! Fill out the form and we’ll respond shortly.</p>
       </div>
+      
       <div className="contact-form-wrapper">
         <form onSubmit={handleSubmit} className="contact-form">
           <label htmlFor="name">Name</label>
@@ -70,9 +69,9 @@ const Contact = () => {
             required
           />
 
-          <button type="submit">Send Message</button>
+          <button type="submit" className="submit-btn">Send Message</button>
 
-          {submitted && <p className="success-msg">Thanks for reaching out! We'll respond soon.</p>}
+          {submitted && <p className="success-msg">✅ Thanks for reaching out! We’ll respond soon.</p>}
         </form>
       </div>
     </div>

@@ -1,78 +1,95 @@
+/* Contact page container */
 .contact-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #454444;
+  padding: 3rem 1rem;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
 }
 
+/* Header */
 .contact-header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .contact-header h1 {
-  font-size: 2.5rem;
-  color: #222;
+  font-size: 2.2rem;
+  color: #2f2461;
+  margin-bottom: 0.5rem;
 }
 
 .contact-header p {
-  color: #666;
-  font-size: 1rem;
+  color: #555;
+  font-size: 1.1rem;
 }
 
+/* Form wrapper */
 .contact-form-wrapper {
-  background: linear-gradient(to right, #2f2461, #0f869398);
-  border-radius: 10px;
+  background: rgb(255, 255, 255);
   padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
 }
 
+/* Form fields */
 .contact-form {
   display: flex;
   flex-direction: column;
 }
 
 .contact-form label {
-  margin-top: 1rem;
-  font-weight: bold;
-  color: #444;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #333;
 }
 
 .contact-form input,
 .contact-form textarea {
-  margin-top: 0.3rem;
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  margin-bottom: 1.2rem;
   border-radius: 8px;
+  border: 1px solid #ccc;
   font-size: 1rem;
-  transition: border-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #375a7d;
+  border-color: #2f2461;
+  box-shadow: 0px 0px 6px rgba(47, 36, 97, 0.3);
   outline: none;
 }
 
-.contact-form button {
-  margin-top: 1.5rem;
-  padding: 0.75rem;
-  font-size: 1rem;
-  background: #040404;
+/* Submit button */
+.submit-btn {
+  padding: 0.85rem;
+  background: linear-gradient(to right, #2f2461, #0f8693);
   color: white;
   border: none;
   border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
-.contact-form button:hover {
-  background: #161470;
+.submit-btn:hover {
+  background: linear-gradient(to right, #0f8693, #2f2461);
 }
 
+/* Success message */
 .success-msg {
   margin-top: 1rem;
-  color: green;
-  font-weight: bold;
+  color: #2f2461;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact-form-wrapper {
+    padding: 1.5rem;
+  }
+
+  .contact-header h1 {
+    font-size: 1.8rem;
+  }
 }

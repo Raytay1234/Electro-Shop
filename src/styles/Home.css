@@ -1,89 +1,210 @@
-.home-info-container {
+/* ===============================
+   Global Reset
+================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: 'Segoe UI', sans-serif;
-  padding: 2rem;
-  background: linear-gradient(to right, #e0f7fa, #fff);
+  background: #f9fafc;
   color: #333;
-}
-
-.home-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.home-header .highlight {
-  color: #0d47a1;
-}
-
-.hero-image img {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  display: block;
-  margin: 1.5rem auto;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-
-.subheading {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  color: #555;
-}
-
-.mission-section,
-.services-section,
-.why-us-section,
-.cta-section {
-  margin-bottom: 3rem;
-}
-
-.services-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.services-list li {
-  margin-bottom: 1rem;
   line-height: 1.6;
 }
 
-.why-us-grid {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.why-us-item {
-  flex: 1 1 30%;
-  background: #f1f8ff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.cta-section {
+/* ===============================
+   Hero Section
+================================= */
+.home-header {
   text-align: center;
-  background: #0d47a1;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: white;
-  padding: 2rem;
-  border-radius: 12px;
 }
 
-.cta-button {
-  margin-top: 1rem;
-  display: inline-block;
-  background: #ffca28;
-  color: #0d47a1;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  text-decoration: none;
+.home-header h1 {
+  font-size: 2.8rem;
   font-weight: bold;
 }
 
-.home-footer {
+.highlight {
+  color: #ffcc00;
+}
+
+.subheading {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.hero-image {
+  margin-top: 2rem;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ===============================
+   Mission Statement
+================================= */
+.mission-section {
+  padding: 3rem 1.5rem;
   text-align: center;
-  padding: 1rem 0;
-  border-top: 1px solid #ccc;
+  max-width: 900px;
+  margin: auto;
+}
+
+.mission-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #203a43;
+}
+
+/* ===============================
+   Services Overview
+================================= */
+.services-section {
+  padding: 3rem 1.5rem;
+  background: #ffffff;
+}
+
+.services-section h2 {
+  text-align: center;
+  color: #203a43;
+  margin-bottom: 2rem;
+}
+
+.services-list {
+  max-width: 900px;
+  margin: auto;
+  list-style: none;
+  font-size: 1.05rem;
+}
+
+.services-list li {
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  border-left: 4px solid #203a43;
+  background: #f7f9fc;
+  border-radius: 6px;
+}
+
+/* ===============================
+   Why Choose Us
+================================= */
+.why-us-section {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+}
+
+.why-us-section h2 {
+  text-align: center;
+  color: #203a43;
+  margin-bottom: 2rem;
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.why-us-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-us-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.why-us-item h3 {
+  color: #203a43;
+  margin-bottom: 0.8rem;
+}
+
+/* ===============================
+   Call-to-Action
+================================= */
+.cta-section {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, #203a43, #2c5364);
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  margin-top: 1.2rem;
+  background: #ffcc00;
+  color: #203a43;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #ffdb4d;
+  transform: translateY(-3px);
+}
+
+/* ===============================
+   Footer
+================================= */
+.home-footer {
+  padding: 1rem;
+  text-align: center;
+  background: #0f2027;
+  color: white;
   font-size: 0.9rem;
+}
+
+.home-footer strong {
+  color: #ffcc00;
+}
+
+/* ===============================
+   Scroll Animations
+================================= */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.visible {
+  animation: fadeInUp 0.8s ease forwards;
 }

@@ -28,27 +28,19 @@ export default function ProductsPage() {
     setCurrentPage(1);
   };
 
-  const goToPage = (page) => {
-    setCurrentPage(page);
-  };
-
-  const goToNextPage = () => {
-    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
-  };
-
-  const goToPreviousPage = () => {
-    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
-  };
+  const goToPage = (page) => setCurrentPage(page);
+  const goToNextPage = () => currentPage < totalPages && setCurrentPage((prev) => prev + 1);
+  const goToPreviousPage = () => currentPage > 1 && setCurrentPage((prev) => prev - 1);
 
   return (
     <div className="products-page">
-      <h2>Our Products</h2>
+      <h2 className="page-title">Our Products</h2>
 
       {/* Filters */}
       <div className="filters">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="🔍 Search products..."
           value={searchQuery}
           onChange={(e) => {
             setSearchQuery(e.target.value);
@@ -100,28 +92,30 @@ export default function ProductsPage() {
       />
 
       {/* Pagination Controls */}
-      <div className="pagination-controls">
-        <button onClick={goToPreviousPage} disabled={currentPage === 1}>
-          ⬅ Previous
-        </button>
+      {totalPages > 1 && (
+        <div className="pagination-controls">
+          <button onClick={goToPreviousPage} disabled={currentPage === 1}>
+            ⬅ Prev
+          </button>
 
-        {[...Array(totalPages)].map((_, index) => {
-          const pageNum = index + 1;
-          return (
-            <button
-              key={pageNum}
-              className={`page-number ${currentPage === pageNum ? 'active' : ''}`}
-              onClick={() => goToPage(pageNum)}
-            >
-              {pageNum}
-            </button>
-          );
-        })}
+          {[...Array(totalPages)].map((_, index) => {
+            const pageNum = index + 1;
+            return (
+              <button
+                key={pageNum}
+                className={`page-number ${currentPage === pageNum ? 'active' : ''}`}
+                onClick={() => goToPage(pageNum)}
+              >
+                {pageNum}
+              </button>
+            );
+          })}
 
-        <button onClick={goToNextPage} disabled={currentPage === totalPages}>
-          Next ➡
-        </button>
-      </div>
+          <button onClick={goToNextPage} disabled={currentPage === totalPages}>
+            Next ➡
+          </button>
+        </div>
+      )}
     </div>
   );
 }

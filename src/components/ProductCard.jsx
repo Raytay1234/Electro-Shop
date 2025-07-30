@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/useCart';
+import '../styles/ProductCard.css';
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
   const [showPlusOne, setShowPlusOne] = useState(false);
 
-  // This function *is used* by the button below
   const handleAddToCart = () => {
     addToCart(product);
     setShowPlusOne(true);
 
-    // Hide the +1 after 800ms
     setTimeout(() => {
       setShowPlusOne(false);
     }, 800);
@@ -18,15 +17,24 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="product-card">
-      <img src={product.image} alt={product.name} />
-      <h2>{product.name}</h2>
-      <p>{product.description}</p>
-      <div className="price">${product.price.toFixed(2)}</div>
+      {/* Product Image */}
+      <div className="product-image">
+        <img src={product.image} alt={product.name} loading="lazy" />
+      </div>
 
-      <div className="button-wrapper">
-        <button onClick={handleAddToCart}>Add to Cart</button>
+      {/* Product Info */}
+      <div className="product-info">
+        <h2 className="product-title">{product.name}</h2>
+        <p className="product-description">{product.description}</p>
+        <div className="product-price">${product.price.toFixed(2)}</div>
+      </div>
 
-        {/* This conditionally renders the +1 animation */}
+      {/* Actions */}
+      <div className="product-actions">
+        <button className="add-to-cart-btn" onClick={handleAddToCart}>
+          🛒 Add to Cart
+        </button>
+
         {showPlusOne && <span className="plus-one">+1</span>}
       </div>
     </div>
