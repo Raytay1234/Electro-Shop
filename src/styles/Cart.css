@@ -1,53 +1,162 @@
+/* ================================
+   Cart Container
+================================ */
 .cart-container {
+  max-width: 900px;
+  margin: 2rem auto;
   padding: 2rem;
-  color: #fff;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.4s ease-in-out;
 }
 
+.cart-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #203a43;
+  text-align: center;
+  font-weight: 700;
+}
+
+.cart-container p {
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* ================================
+   Cart Items
+================================ */
 .cart-list {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .cart-item {
   display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  background-color: #1e1e1e;
+  align-items: flex-start;
+  gap: 1rem;
   padding: 1rem;
-  border-radius: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
 }
 
 .cart-item img {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
-  margin-right: 1rem;
   border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.cart-item-details {
+  flex: 1;
 }
 
 .cart-item-details h4 {
-  margin: 0;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: #203a43;
 }
 
 .cart-item-details p {
-  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #555;
 }
 
+/* ================================
+   Remove Button
+================================ */
 .remove-btn {
-  margin-right: 0.5rem;
-  padding: 0.3rem 0.6rem;
-  background: #ff4d4f;
-  color: #fff;
+  background: #ff4c4c;
+  color: white;
   border: none;
-  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: #d83a3a;
+  transform: scale(1.03);
+}
+
+/* ================================
+   Total & Actions
+================================ */
+.cart-container h3 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  text-align: right;
+  color: #0f8693;
+  font-weight: bold;
+}
+
+.proceed-btn,
+.continue-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: all 0.3s ease;
 }
 
 .proceed-btn {
-  padding: 0.3rem 0.6rem;
-  background: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  background: linear-gradient(to right, #1a1f36, #0f8693);
+  color: white;
+}
+
+.proceed-btn:hover {
+  background: linear-gradient(to right, #162030, #0a6f79);
+  transform: translateY(-2px);
+}
+
+.continue-btn {
+  background: #f0f0f0;
+  color: #203a43;
+}
+
+.continue-btn:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   Animation
+================================ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 600px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cart-item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cart-container h3 {
+    text-align: center;
+  }
 }
