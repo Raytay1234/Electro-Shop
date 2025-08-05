@@ -5,6 +5,7 @@ import '../styles/ProductCard.css';
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
   const [showPlusOne, setShowPlusOne] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const handleAddToCart = () => {
     addToCart(product);
@@ -13,6 +14,10 @@ const ProductCard = ({ product }) => {
     setTimeout(() => {
       setShowPlusOne(false);
     }, 800);
+  };
+
+  const toggleDescription = () => {
+    setExpanded(!expanded);
   };
 
   return (
@@ -25,7 +30,21 @@ const ProductCard = ({ product }) => {
       {/* Product Info */}
       <div className="product-info">
         <h2 className="product-title">{product.name}</h2>
-        <p className="product-description">{product.description}</p>
+
+        <p className={`product-description ${expanded ? 'expanded' : ''}`}>
+          {product.description}
+        </p>
+
+        {/* Show "Read More" only if description is long */}
+        {product.description.length > 100 && (
+          <button
+            className="read-more-btn"
+            onClick={toggleDescription}
+          >
+            {expanded ? 'Read Less' : 'Read More'}
+          </button>
+        )}
+
         <div className="product-price">${product.price.toFixed(2)}</div>
       </div>
 

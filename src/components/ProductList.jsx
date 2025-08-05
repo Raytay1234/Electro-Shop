@@ -2,6 +2,7 @@
 import React from 'react';
 import ProductCard from './ProductCard.jsx';
 import products from '../data/Products.js';
+import '../styles/ProductList.css';
 
 const ProductList = ({
   searchQuery = '',
