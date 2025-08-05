@@ -4,7 +4,7 @@
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Keep logo on left, right content on right */
+  justify-content: space-between; 
   padding: 0.8rem 2rem;
   position: sticky;
   top: 0;
@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  margin-left: auto; /* Forces links to right side */
+  margin-left: auto;
 }
 .nav-links a,
 .nav-links button {
@@ -96,7 +96,7 @@
 .hamburger span {
   width: 24px;
   height: 2px;
-  background: rgb(9, 7, 7);
+  background: white;
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -121,6 +121,13 @@
   font-weight: bold;
   padding: 2px 6px;
   border-radius: 50%;
+}
+
+/* Right Section */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem; /* space between hamburger & avatar */
 }
 
 /* Desktop vs Mobile Avatar Placement */
@@ -149,7 +156,7 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1.5rem 1rem;
-    display: none; /* Hidden by default */
+    display: none; 
     width: 200px;
     border-radius: 8px;
     box-shadow: -2px 4px 12px rgba(0,0,0,0.15);

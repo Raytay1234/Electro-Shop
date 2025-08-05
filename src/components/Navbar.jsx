@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../context/useAuth.jsx';
@@ -68,17 +67,6 @@ const Navbar = () => {
 
       {/* Right: Mobile Actions */}
       <div className="nav-right">
-        {/* Mobile Profile Avatar */}
-        {user && (
-          <Link to="/UserProfile" className="profile-link mobile-avatar">
-            <img
-              src={user.profilePicture || '/default-avatar.png'}
-              alt="Profile"
-              className="profile-avatar"
-            />
-          </Link>
-        )}
-
         {/* Hamburger Menu */}
         <button
           className={`hamburger ${menuOpen ? 'active' : ''}`}
@@ -92,6 +80,17 @@ const Navbar = () => {
             <span className="hamburger-badge">{cartQuantity}</span>
           )}
         </button>
+
+        {/* Mobile Profile Avatar */}
+        {user && (
+          <Link to="/UserProfile" className="profile-link mobile-avatar">
+            <img
+              src={user.profilePicture || '/default-avatar.png'}
+              alt="Profile"
+              className="profile-avatar"
+            />
+          </Link>
+        )}
       </div>
     </nav>
   );
