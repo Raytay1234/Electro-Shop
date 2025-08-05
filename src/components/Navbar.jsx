@@ -21,7 +21,8 @@ const Navbar = () => {
     <nav className="navbar">
       {/* Left: Logo */}
       <Link to="/" className="nav-logo">
-        ElectroStore
+        <img src="/pics/Electrostore logo.png" alt="Electrostore" className="nav-logo-img" />
+        <span className="nav-logo-text">Electrostore</span>
       </Link>
 
       {/* Desktop Nav Links */}
